@@ -1,7 +1,7 @@
 #===============================================================================
 #
 #         FILE: Dockerfile
-#    DEV USAGE: docker run -it -v /Users/Alec/Documents/Bioinformatics/MDV_Project/p0100_music/data:/mnt/data --name roirscript --rm steepale/20190817_rbaseubuntu:1.1
+#    DEV USAGE: docker run -it -v /Users/Alec/Documents/Bioinformatics/MDV_Project/p0100_music/data:/mnt/data --name roirscript --rm steepale/20190817_roirscript
 #        USAGE: docker image build -t steepale/20190817_roirscript . # local image build
 #
 #  DESCRIPTION:  This Dockerfile will expand upon an R envrionemtn in Ubuntu inspired by the tidyverse image from the "Rocker Project"
