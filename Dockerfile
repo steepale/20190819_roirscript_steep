@@ -54,11 +54,8 @@ RUN R -e "BiocManager::install('GenomicRanges', update = TRUE, ask = FALSE)" \
     -e "BiocManager::install('Biostrings', update = TRUE, ask = FALSE)" \
     -e "BiocManager::install('BSgenome', update = TRUE, ask = FALSE)" \
     -e "BiocManager::install('AnnotationHub', update = TRUE, ask = FALSE)" \
-    -e "BiocManager::install('biomaRt', update = TRUE, ask = FALSE)"
-
-# Combine this RUN command with the above once Image works well
-RUN R -e "BiocManager::install('org.Gg.eg.db', update = TRUE, ask = FALSE)"
-
+    -e "BiocManager::install('biomaRt', update = TRUE, ask = FALSE)" \
+    -e "BiocManager::install('org.Gg.eg.db', update = TRUE, ask = FALSE)"
 
 # This is the CMD command from the steepale/20190817_rbaseubuntu image we FROM'ed
 CMD ["/bin/bash"]
