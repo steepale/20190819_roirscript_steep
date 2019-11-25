@@ -1,7 +1,7 @@
 #===============================================================================
 #
 #         FILE: Dockerfile
-#    DEV USAGE: docker run -it -v /Users/Alec/Documents/Bioinformatics/MDV_Project/p0100_music/data:/mnt/data --name roirscript --rm steepale/20190819_roirscript
+#    DEV USAGE: docker run -it -v /Users/Alec/Documents/Bioinformatics/MDV_Project/p0100_music/data:/Users/Alec/Documents/Bioinformatics/MDV_Project/p0100_music/data --name roirscript --rm steepale/20190819_roirscript:1.0
 #        USAGE: docker image build -t steepale/20190819_roirscript:1.0 . # local image build
 #
 #  DESCRIPTION:  This Dockerfile will expand upon an R envrionemtn in Ubuntu inspired by the tidyverse image from the "Rocker Project"
@@ -32,12 +32,14 @@ RUN sudo apt-get update -qq \
     liblzma-dev \
     libudunits2-dev \
     aptitude \
+    less \
     && sudo aptitude install -y libgdal-dev \
     && sudo apt-get install -y gdal-bin \
     libproj-dev \
     proj-data \
     proj-bin \
     libgeos-dev \
+    bedtools \
     && install2.r --error \
     --deps TRUE \
     dplyr \
@@ -46,7 +48,9 @@ RUN sudo apt-get update -qq \
     data.table \
     stringdist \
     tidyr \
-    ggplot2
+    ggplot2 \
+    optparse \
+    fuzzyjoin
 
 # Some packages must be installed directly from BiocManager
 RUN R -e "BiocManager::install('GenomicRanges', update = TRUE, ask = FALSE)" \
